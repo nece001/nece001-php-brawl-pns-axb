@@ -20,11 +20,11 @@ interface AxbInterface
      *
      * @param PhoneNumber $a 号码A
      * @param PhoneNumber $b 号码B
-     * @param array $data 自定义数据
+     * @param array $custom_data 自定义数据
      *
      * @return BindResult
      */
-    public function bind(PhoneNumber $a, PhoneNumber $b, array $data = array()): BindResult;
+    public function bind(PhoneNumber $a, PhoneNumber $b, array $custom_data = array()): BindResult;
 
     /**
      * 解绑
