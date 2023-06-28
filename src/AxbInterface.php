@@ -2,6 +2,8 @@
 
 namespace Nece\Brawl\Pns\Axb;
 
+use Nece\Brawl\Pns\PhoneNumber;
+
 /**
  * AXB模式接口
  *
@@ -14,13 +16,15 @@ interface AxbInterface
      * 绑定
      *
      * @Author nece001@163.com
-     * @DateTime 2023-06-25
+     * @DateTime 2023-06-28
      *
-     * @param BindParameter $bindParameter
+     * @param PhoneNumber $a 号码A
+     * @param PhoneNumber $b 号码B
+     * @param array $data 自定义数据
      *
      * @return BindResult
      */
-    public function bind(BindParameter $bindParameter): BindResult;
+    public function bind(PhoneNumber $a, PhoneNumber $b, array $data = array()): BindResult;
 
     /**
      * 解绑
@@ -30,7 +34,7 @@ interface AxbInterface
      *
      * @param string $bind_id
      *
-     * @return void
+     * @return bool
      */
-    public function unbind(string $bind_id);
+    public function unbind(string $bind_id): bool;
 }
